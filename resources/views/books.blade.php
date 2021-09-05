@@ -19,7 +19,7 @@
             <!-- 本のタイトル -->
             <div class="form-group">
                 <div class="col-sm-6">
-                    <input type="text" name="item_name" class="form-control">
+                    <input type="text" name="item_name" class="form-control" value="{{ old('item_name') }}">
                 </div>
             </div>
 
@@ -33,13 +33,29 @@
             </div>
         </form>
     </div>
+    @if(count($books))
+    <div class="card-body">
+      <div class="card-body">
+        <table class="table table-striped task-table">
+          <thead><th>NAME</th><th>AMOUNT</th><th>CREATED</th></thead>
+          @foreach ($books as $item)
+            <tbody>
+              <td class="table-text"><div>{{$item->item_name}}</div></td>
+              <td class="table-text"><div>{{$item->item_amount}}</div></td>
+              <td class="table-text"><div>{{$item->created_at}}</div></td>
+            </tbody>
+          @endforeach
+        </table>
+      </div>
+    </div>
+    @endif
     @php
       $xx = array(
         "x" => "a",
         'y' => 'b',
         'z' => 'c'
       );
-      // ddd($xx);
+      // ddd($books[0]->item_name);
     @endphp
     <ul>
       @foreach ($xx as $x)
