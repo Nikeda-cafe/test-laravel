@@ -12,6 +12,11 @@
         @include('common.errors')
         <!-- バリデーションエラーの表示に使用-->
 
+        @if(session('message'))
+        <div class="alert alert-success">
+          {{session('message')}}
+        </div>
+        @endif
         <!-- 本登録フォーム -->
         <form action="{{ url('books/insert') }}" method="POST" class="form-horizontal">
             @csrf
@@ -67,6 +72,11 @@
             </tbody>
           @endforeach
         </table>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4 offset-md-4">
+        {{$books->links()}}
       </div>
     </div>
     @endif

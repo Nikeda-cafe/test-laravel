@@ -11,7 +11,7 @@ class BooksController extends Controller
 {
   public function index()
   {
-    $books = Book::orderBy('created_at','desc')->get();
+    $books = Book::orderBy('created_at','desc')->paginate(3);
     return view('books',array('books' => $books));
   }
 
@@ -38,7 +38,7 @@ class BooksController extends Controller
     $books->item_amount = $req->item_amount;
     $books->published = now();
     $books->save();
-    return redirect('/books');
+    return redirect('/books')->with('message','登録完了');
   }
 
   public function edit(Request $req)
