@@ -13,7 +13,7 @@
         <!-- バリデーションエラーの表示に使用-->
 
         <!-- 本登録フォーム -->
-        <form action="{{ url('books') }}" method="POST" class="form-horizontal">
+        <form action="{{ url('books/insert') }}" method="POST" class="form-horizontal">
             @csrf
 
             <!-- 本のタイトル -->
@@ -46,17 +46,16 @@
     <div class="card-body">
       <div class="card-body">
         <table class="table table-striped task-table">
-          <thead><th>NAME</th><th>AMOUNT</th><th>CREATED</th></thead>
+          <thead><th>NAME</th><th>AMOUNT</th><th>CREATED</th><th>DELETE</th><th>UPDATE</th></thead>
           @foreach ($books as $item)
             <tbody>
               <td class="table-text"><div>{{$item->item_name}}</div></td>
               <td class="table-text"><div>{{$item->item_amount}}</div></td>
               <td class="table-text"><div>{{$item->created_at}}</div></td>
               <td>
-                <form action="{{ url('book/'.$item->id) }}" method="post">
+                <form action="{{ url('books/delete') }}" method="post">
                   @csrf
-                  @method('DELETE')
-
+                  <input type="hidden" name="del_id" value="{{$item->id}}">
                   <button type="submit" class="btn btn-danger">削除</button>
                 </form>
               </td>
