@@ -36,5 +36,9 @@ Route::post('/books/delete', 'BooksController@delete');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'BooksController@index')->name('home');
+
+Route::group(['middleware' => 'auth'],function(){
+  Route::get('/books','BooksController@index');
+});
 
