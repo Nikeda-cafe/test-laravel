@@ -17,7 +17,9 @@ class BooksController extends Controller
 
   public function index()
   {
-    $books = Book::orderBy('created_at','desc')->paginate(3);
+    $books = Book::where('user_id',Auth::user()->id)
+              ->orderBy('created_at','desc')
+              ->paginate(3);
     return view('books',array('books' => $books));
   }
 
@@ -39,6 +41,7 @@ class BooksController extends Controller
 
     // eloquent
     $books = new Book;
+    $books->user_id = Auth::user()->id;
     $books->item_name = $req->item_name;
     $books->item_number = $req->item_number;
     $books->item_amount = $req->item_amount;
@@ -75,6 +78,7 @@ class BooksController extends Controller
 
     // eloquent
     $books = Book::find($req->id);
+    $books->user_id = Auth::user()->id;
     $books->item_name = $req->item_name;
     $books->item_number = $req->item_number;
     $books->item_amount = $req->item_amount;
