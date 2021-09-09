@@ -57,6 +57,7 @@ class BooksController extends Controller
     $books = new Book;
     $entity = $books->find($id);
 
+
     return view('edit',array('entity' => $entity));
   }
 
