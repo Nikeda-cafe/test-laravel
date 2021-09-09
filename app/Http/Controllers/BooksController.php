@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Book;
 use Auth;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Query\Builder;
 use Validator;
 
 class BooksController extends Controller
@@ -17,9 +19,16 @@ class BooksController extends Controller
 
   public function index()
   {
-    $books = Book::where('user_id',Auth::user()->id)
-              ->orderBy('created_at','desc')
+    // $books = Book::where('user_id',Auth::user()->id)
+    //           ->orderBy('created_at','desc')
+    //           ->paginate(3);
+    DB::enableQueryLog();
+    $books = DB::table('books')
+              ->join('users','books.user_id','=','users.id')
+              ->where('user_id',Auth::user()->id)
               ->paginate(3);
+
+              dd(DB::getQueryLog());
     return view('books',array('books' => $books));
   }
 

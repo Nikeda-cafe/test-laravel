@@ -51,10 +51,11 @@
     <div class="card-body">
       <div class="card-body">
         <table class="table table-striped task-table">
-          <thead><th>NAME</th><th>AMOUNT</th><th>CREATED</th><th>DELETE</th><th>UPDATE</th></thead>
+          <thead><th>NAME</th><th>MAIL</th><th>AMOUNT</th><th>CREATED</th><th>DELETE</th><th>UPDATE</th></thead>
           @foreach ($books as $item)
             <tbody>
               <td class="table-text"><div>{{$item->item_name}}</div></td>
+              <td class="table-text"><div>{{$item->email}}</div></td>
               <td class="table-text"><div>{{$item->item_amount}}</div></td>
               <td class="table-text"><div>{{$item->created_at}}</div></td>
               <td>
