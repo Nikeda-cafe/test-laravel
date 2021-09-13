@@ -22,13 +22,13 @@ class BooksController extends Controller
     // $books = Book::where('user_id',Auth::user()->id)
     //           ->orderBy('created_at','desc')
     //           ->paginate(3);
-    DB::enableQueryLog();
+    // DB::enableQueryLog();
     $books = DB::table('books')
               ->join('users','books.user_id','=','users.id')
               ->where('user_id',Auth::user()->id)
               ->paginate(3);
 
-              dd(DB::getQueryLog());
+              // dd(DB::getQueryLog());
     return view('books',array('books' => $books));
   }
 
@@ -48,12 +48,22 @@ class BooksController extends Controller
         ->withErrors($validator);
     }
 
+    $file = $req->file('item_img');
+    if(!empty($file)){
+      $fileName = $file->getClientOriginalName();
+      $move = $file->move('upload/',$fileName);
+      // dd($move);
+    }else{
+      $fileName = '';
+    }
+
     // eloquent
     $books = new Book;
     $books->user_id = Auth::user()->id;
     $books->item_name = $req->item_name;
     $books->item_number = $req->item_number;
     $books->item_amount = $req->item_amount;
+    $books->item_img = $fileName;
     $books->published = now();
     $books->save();
     return redirect('/books')->with('message','登録完了');

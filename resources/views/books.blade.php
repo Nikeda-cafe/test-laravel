@@ -18,7 +18,7 @@
         </div>
         @endif
         <!-- 本登録フォーム -->
-        <form action="{{ url('books/insert') }}" method="POST" class="form-horizontal">
+        <form enctype="multipart/form-data" action="{{ url('books/insert') }}" method="POST" class="form-horizontal">
             @csrf
 
             <!-- 本のタイトル -->
@@ -35,6 +35,11 @@
                 <label for="" class="form-label">本の金額</label>
                 <input type="text" name="item_amount" class="form-control" value="{{ old('item_amount') }}">
               </div>
+            </div>
+            {{-- file追加 --}}
+            <div class="col-sm-6">
+              <label>画像</label>
+              <input type="file" name="item_img" id="">
             </div>
 
             <!-- 本 登録ボタン -->
@@ -54,7 +59,10 @@
           <thead><th>NAME</th><th>MAIL</th><th>AMOUNT</th><th>CREATED</th><th>DELETE</th><th>UPDATE</th></thead>
           @foreach ($books as $item)
             <tbody>
-              <td class="table-text"><div>{{$item->item_name}}</div></td>
+              <td class="table-text">
+                <div>{{$item->item_name}}</div>
+                <div><img src="upload/{{$item->item_img}}" width="100" alt=""></div>
+              </td>
               <td class="table-text"><div>{{$item->email}}</div></td>
               <td class="table-text"><div>{{$item->item_amount}}</div></td>
               <td class="table-text"><div>{{$item->created_at}}</div></td>
