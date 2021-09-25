@@ -14,6 +14,8 @@
 use App\Book;
 use Illuminate\Http\Request;
 
+Route::get('/','HomeController@index');
+
 /**
 * 本の一覧表示(books.blade.php)
 */
