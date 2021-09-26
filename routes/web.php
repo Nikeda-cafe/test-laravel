@@ -14,7 +14,8 @@
 use App\Book;
 use Illuminate\Http\Request;
 
-Route::get('/','HomeController@index');
+#Route::get('/','HomeController@index');
+Route::get('/','HelloController@index');
 
 /**
 * 本の一覧表示(books.blade.php)
@@ -36,11 +37,11 @@ Route::post('/books/update', 'BooksController@update');
 Route::post('/books/delete', 'BooksController@delete');
 
 
-Auth::routes();
+// Auth::routes();
 
-Route::get('/home', 'BooksController@index')->name('home');
+// Route::get('/home', 'BooksController@index')->name('home');
 
-Route::group(['middleware' => 'auth'],function(){
-  Route::get('/books','BooksController@index');
-});
+// Route::group(['middleware' => 'auth'],function(){
+//   Route::get('/books','BooksController@index');
+// });
 
