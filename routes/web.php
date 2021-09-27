@@ -16,6 +16,8 @@ use Illuminate\Http\Request;
 
 #Route::get('/','HomeController@index');
 Route::get('/','HelloController@index');
+Route::get('/add','HelloController@add');
+Route::post('/insert','HelloController@insert');
 
 /**
 * 本の一覧表示(books.blade.php)
