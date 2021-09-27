@@ -3,9 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Person;
-use Illuminate\Support\Facades\DB;
-use App\Models;
+use App\Models\Person;
 
 class HelloController extends Controller
 {
