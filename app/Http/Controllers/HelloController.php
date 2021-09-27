@@ -25,9 +25,7 @@ class HelloController extends Controller
 
   public function insert(Request $req)
   {
-    $validator = Validator::make($req->all(),array(
-      'name' => 'required'
-    ));
+    $validator = Person::getInsertPersonValidator($req);
 
     if($validator->fails()){
       return redirect('add')
@@ -35,12 +33,9 @@ class HelloController extends Controller
       ->withErrors($validator);
     }
 
-    $params = array(
-      'name' => $req->name,
-      'mail' => $req->mail,
-      'age' => $req->age
-    );
-    DB::table('people')->insert($params);
-    return redirect('/');
+    $success = Person::insertPerson($req);
+    if($success){
+      return redirect('/');
+    }
   }
 }
