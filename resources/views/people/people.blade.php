@@ -3,14 +3,14 @@
 <h1 class="blue-text text-lighten-3">Show People</h1>
 <table class="striped">
   <tr>
-    <th>id</th>
+    <th>EDIT</th>
     <th>name</th>
     <th>mail</th>
     <th>age</th>
   </tr>
   @foreach ($items as $item)
   <tr>
-    <td>{{$item->id}}</td>
+    <td><a href="/public/people/edit/{{$item->id}}">EDIT</a></td>
     <td>{{$item->name}}</td>
     <td>{{$item->mail}}</td>
     <td>{{$item->age}}</td>

@@ -22,8 +22,8 @@
         </a>
         <div class="menu">
           <ul class="right hide-on-med-and-down">
-            <li><a href="add" class="grey-text text-darken-3">ADD USER</a></li>
-            <li><a href="#" class="grey-text text-darken-3">Contents2</a></li>
+            <li><a href="/public/people" class="grey-text text-darken-3">HOME</a></li>
+            <li><a href="/public/people/add" class="grey-text text-darken-3">ADD USER</a></li>
             <li><a href="#" class="grey-text text-darken-3">Contents3</a></li>
             <li><a href="#" class="grey-text text-darken-3">Contents4</a></li>
           </ul>
@@ -39,8 +39,8 @@
     </a>
 
     <div class="menu">
-      <li><a href="add">ADD USER</a></li>
-      <li><a href="#">Contents2</a></li>
+      <li><a href="/public/people">HOME</a></li>
+      <li><a href="/public/people/add">ADD USER</a></li>
       <li><a href="#">Contents3</a></li>
       <li><a href="#">Contents4</a></li>
     </div>

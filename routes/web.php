@@ -15,9 +15,11 @@ use App\Book;
 use Illuminate\Http\Request;
 
 #Route::get('/','HomeController@index');
-Route::get('/','HelloController@index');
-Route::get('/add','HelloController@add');
-Route::post('/insert','HelloController@insert');
+Route::get('/people','HelloController@index');
+Route::get('/people/add','HelloController@add');
+Route::post('/people/insert','HelloController@insert');
+Route::get('/people/edit/{id}','HelloController@edit');
+Route::post('/people/update','HelloController@update');
 
 /**
 * 本の一覧表示(books.blade.php)

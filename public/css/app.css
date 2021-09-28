@@ -20,3 +20,16 @@
   padding-left: 17rem;
 }
 
+.pagination li .pager-str {
+  display: flex;
+  align-items: center;
+}
+
+.pagination li .pager-str__prev::after {
+  content: "PREV";
+}
+
+.pagination li .pager-str__next::before {
+  content: "NEXT";
+}
+

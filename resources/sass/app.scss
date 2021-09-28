@@ -25,3 +25,19 @@
   color: rgb(66, 66, 66);
   padding-left: 17rem;
 }
+.pagination li .pager-str{
+  display: flex;
+  align-items: center;
+  &::after,&::before{
+    // border-bottom: 1px solid;
+    // line-height: normal;
+  }
+
+  &__prev::after{
+    content: "PREV";
+  }
+  &__next::before{
+    content: "NEXT";
+  }
+}
+

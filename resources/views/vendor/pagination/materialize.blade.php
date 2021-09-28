@@ -2,11 +2,11 @@
   <!-- Previous Page Link -->
   @if ($paginator->onFirstPage())
     <li class="disabled">
-      <a href="#!"><i class="material-icons">chevron_left</i></a>
+      <a href="#!" class="pager-str pager-str__prev"><i class="material-icons">chevron_left</i></a>
     </li>
   @else
-        <li >
-          <a href="{{ $paginator->previousPageUrl() }}" rel="prev"><i class="material-icons">chevron_left</i></a>
+        <li class="waves-effect">
+          <a href="{{ $paginator->previousPageUrl() }}" class="pager-str pager-str__prev" rel="prev"><i class="material-icons">chevron_left</i></a>
         </li>
 
   @endif
@@ -32,8 +32,8 @@
 
   <!-- Next Page Link -->
   @if ($paginator->hasMorePages())
-      <li class="waves-effect"><a href="{{ $paginator->nextPageUrl() }}"><i class="material-icons">chevron_right</i></a></li>
+      <li class="waves-effect"><a href="{{ $paginator->nextPageUrl() }}" class="pager-str pager-str__next"><i class="material-icons">chevron_right</i></a></li>
   @else
-      <li class="disabled"><a><i class="material-icons">chevron_right</i></a></li>
+      <li class="disabled"><a class="pager-str pager-str__next"><i class="material-icons">chevron_right</i></a></li>
   @endif
 </ul>

@@ -4,7 +4,7 @@
   @if(count($errors) > 0)
     <p>error</p>
   @endif
-  <form action="insert" method="post">
+  <form action="/public/people/insert" method="post">
     @csrf
     name:<input type="text" name="name" id="" value="{{old('name')}}">
     {{-- @error('name') --}}
