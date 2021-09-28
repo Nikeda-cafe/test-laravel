@@ -18,9 +18,9 @@
   @endforeach
 </table>
 {{$items->links('vendor.pagination.materialize')}}
-<div class="row">
+{{-- <div class="row">
   <a href="add">
     <button class="light-green lighten-2 waves-effect waves-light btn-large" type="submit">add user</button>
   </a>
-</div>
+</div> --}}
 @endsection
