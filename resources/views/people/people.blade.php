@@ -7,6 +7,7 @@
     <th>name</th>
     <th>mail</th>
     <th>age</th>
+    <th>DELETE</th>
   </tr>
   @foreach ($items as $item)
   <tr>
@@ -14,6 +15,13 @@
     <td>{{$item->name}}</td>
     <td>{{$item->mail}}</td>
     <td>{{$item->age}}</td>
+    <td>
+      <form action="/public/people/delete/{{$item->id}}" method="get">
+        <button type="submit" style="padding:0 8px" class=" red accent-1 waves-effect waves-light btn-small">
+          DELETE
+        </button>
+      </form>
+    </td>
   </tr>
   @endforeach
 </table>
@@ -24,3 +32,6 @@
   </a>
 </div> --}}
 @endsection
+@if(session('message'))
+  <script>window.alert("{{session('message')}}")</script>
+@endif

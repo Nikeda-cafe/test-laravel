@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Person;
 use Illuminate\Support\Facades\DB;
 use Validator;
+use Session;
 
 class HelloController extends Controller
 {
@@ -62,6 +63,17 @@ class HelloController extends Controller
     // dd($success);
     if($success){
       return redirect('people');
+    }
+  }
+
+  public function delete(Request $req)
+  {
+    // dd($req);
+    $delete = DB::table('people')->where('id',$req->id)->delete();
+    if($delete){
+      return redirect('people')->with('message','削除完了');
+    }else{
+      return redirect('people')->with('message','削除失敗');
     }
   }
 }

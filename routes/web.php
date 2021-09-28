@@ -20,6 +20,7 @@ Route::get('/people/add','HelloController@add');
 Route::post('/people/insert','HelloController@insert');
 Route::get('/people/edit/{id}','HelloController@edit');
 Route::post('/people/update','HelloController@update');
+Route::get('/people/delete/{id}','HelloController@delete');
 
 /**
 * 本の一覧表示(books.blade.php)
