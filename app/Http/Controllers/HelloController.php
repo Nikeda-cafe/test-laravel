@@ -25,6 +25,7 @@ class HelloController extends Controller
 
   public function insert(Request $req)
   {
+    dd($req->name);
     $validator = Person::getInsertPersonValidator($req);
 
     if($validator->fails()){

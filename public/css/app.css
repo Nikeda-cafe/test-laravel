@@ -4,7 +4,11 @@
 
 @media screen and (max-width: 480px) {
   h1 {
-    font-size: 5vw;
+    font-size: 12vw;
   }
+}
+
+.checkboxes:nth-of-type(n+2) {
+  margin-left: 4vw;
 }
 
