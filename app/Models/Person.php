@@ -13,7 +13,7 @@ class Person extends Model
 
     public static function getPeople()
     {
-      $people = DB::table('people')->paginate(2);
+      $people = DB::table('people')->paginate(10);
       return $people;
     }
 

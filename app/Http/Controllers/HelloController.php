@@ -76,4 +76,12 @@ class HelloController extends Controller
       return redirect('people')->with('message','削除失敗');
     }
   }
+
+  public function search(Request $req)
+  {
+    $input = $req->input;
+    $items = DB::table('people')->where('name','like','%'.$input.'%')->distinct()->paginate(10);
+
+    return view('people.people',array('old_value' => $input,'items' => $items));
+  }
 }

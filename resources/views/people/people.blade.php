@@ -1,6 +1,18 @@
 @extends('layouts.helloapp')
 @section('content')
 <h1 class="blue-text text-lighten-3">Show People</h1>
+{{-- 検索 --}}
+<form action="/public/people/search" method="POST">
+  @csrf
+<div class="row">
+  <div class="input-field col s6">
+    <input placeholder="aaa" id="first_name" type="text" value="@isset($old_value){{$old_value}}@endisset" class="validate" name="input">
+    <label for="first_name">First Name</label>
+  </div>
+  <button type="submit" class="search-btn waves-effect waves-light btn"><i class="material-icons right">search</i>search</button>
+</div>
+</form>
+{{-- 結果 --}}
 <table class="striped">
   <tr>
     <th>EDIT</th>
