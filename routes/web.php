@@ -20,7 +20,7 @@ Route::get('/people/add','HelloController@add');
 Route::post('/people/insert','HelloController@insert');
 Route::get('/people/edit/{id}','HelloController@edit');
 Route::post('/people/update','HelloController@update');
-Route::post('/people/search','HelloController@search');
+Route::get('/people/search','HelloController@search');
 Route::get('/people/delete/{id}','HelloController@delete');
 
 

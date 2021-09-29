@@ -78,6 +78,99 @@ class PeopleTableSeeder extends Seeder
         ];
 
         DB::table('people')->insert($param);
+
+        DB::table('people')->insert($param);
+        $param = [
+          'name' => 'rrr',
+          'mail' => 'rrr@rrr',
+          'age' => 32,
+        ];
+
+        DB::table('people')->insert($param);DB::table('people')->insert($param);
+        $param = [
+          'name' => 'rrr',
+          'mail' => 'rrr@rrr',
+          'age' => 32,
+        ];
+
+        DB::table('people')->insert($param);DB::table('people')->insert($param);
+        $param = [
+          'name' => 'rrr',
+          'mail' => 'rrr@rrr',
+          'age' => 32,
+        ];
+
+        DB::table('people')->insert($param);DB::table('people')->insert($param);
+        $param = [
+          'name' => 'rrr',
+          'mail' => 'rrr@rrr',
+          'age' => 32,
+        ];
+
+        DB::table('people')->insert($param);DB::table('people')->insert($param);
+        $param = [
+          'name' => 'rrr',
+          'mail' => 'rrr@rrr',
+          'age' => 32,
+        ];
+
+        DB::table('people')->insert($param);DB::table('people')->insert($param);
+        $param = [
+          'name' => 'rrr',
+          'mail' => 'rrr@rrr',
+          'age' => 32,
+        ];
+
+        DB::table('people')->insert($param);DB::table('people')->insert($param);
+        $param = [
+          'name' => 'rrr',
+          'mail' => 'rrr@rrr',
+          'age' => 32,
+        ];
+
+        DB::table('people')->insert($param);DB::table('people')->insert($param);
+        $param = [
+          'name' => 'rrr',
+          'mail' => 'rrr@rrr',
+          'age' => 32,
+        ];
+
+        DB::table('people')->insert($param);DB::table('people')->insert($param);
+        $param = [
+          'name' => 'rrr',
+          'mail' => 'rrr@rrr',
+          'age' => 32,
+        ];
+
+        DB::table('people')->insert($param);DB::table('people')->insert($param);
+        $param = [
+          'name' => 'rrr',
+          'mail' => 'rrr@rrr',
+          'age' => 32,
+        ];
+
+        DB::table('people')->insert($param);DB::table('people')->insert($param);
+        $param = [
+          'name' => 'rrr',
+          'mail' => 'rrr@rrr',
+          'age' => 32,
+        ];
+
+        DB::table('people')->insert($param);DB::table('people')->insert($param);
+        $param = [
+          'name' => 'rrr',
+          'mail' => 'rrr@rrr',
+          'age' => 32,
+        ];
+
+        DB::table('people')->insert($param);DB::table('people')->insert($param);
+        $param = [
+          'name' => 'rrr',
+          'mail' => 'rrr@rrr',
+          'age' => 32,
+        ];
+
+        DB::table('people')->insert($param);
     }
 }
 

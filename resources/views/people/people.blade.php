@@ -2,8 +2,7 @@
 @section('content')
 <h1 class="blue-text text-lighten-3">Show People</h1>
 {{-- 検索 --}}
-<form action="/public/people/search" method="POST">
-  @csrf
+<form action="/public/people/search" method="get">
 <div class="row">
   <div class="input-field col s6">
     <input placeholder="aaa" id="first_name" type="text" value="@isset($old_value){{$old_value}}@endisset" class="validate" name="input">
@@ -37,7 +36,7 @@
   </tr>
   @endforeach
 </table>
-{{$items->links('vendor.pagination.materialize')}}
+{{$items->appends(request()->input())->links('vendor.pagination.materialize')}}
 {{-- <div class="row">
   <a href="add">
     <button class="light-green lighten-2 waves-effect waves-light btn-large" type="submit">add user</button>
