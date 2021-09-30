@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Query\Builder;
 use Validator;
+use Illuminate\Support\Facades\Cache;
 
 class Person extends Model
 {
@@ -13,7 +14,12 @@ class Person extends Model
 
     public static function getPeople()
     {
-      $people = DB::table('people')->paginate(10);
+      // if(Cache::get('test')){
+      //   $people = Cache::get('test');
+      // }else{
+        $people = DB::table('people')->paginate(10);
+        // Cache::put('test',$people,600);
+      // }
       return $people;
     }
 
