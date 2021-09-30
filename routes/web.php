@@ -13,6 +13,8 @@
 
 use App\Book;
 use Illuminate\Http\Request;
+// use Illuminate\Routing\Route;
+use Illuminate\Support\Facades\Route;
 
 #Route::get('/','HomeController@index');
 Route::get('/people','HelloController@index');
@@ -23,6 +25,8 @@ Route::post('/people/update','HelloController@update');
 Route::get('/people/search','HelloController@search');
 Route::get('/people/delete/{id}','HelloController@delete');
 
+
+Route::resource('/rest','RestappController');
 
 /**
 * 本の一覧表示(books.blade.php)
