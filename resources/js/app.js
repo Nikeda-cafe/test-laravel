@@ -39,7 +39,7 @@ $(function(){
   const likeIds = [];
   // console.log(myFavs);
   myFavs.forEach(function(el){
-    console.log($('#fav_icon-' +el )[0])
+    // console.log($('#fav_icon-' +el )[0])
     $('#fav_icon-' +el ).text('favorite');
     likeIds.push(el)
   })

@@ -34,7 +34,7 @@
         </button>
       </form>
     </td>
-    <td><i id="fav_icon-{{$item->id}}" class="material-icons fav-icon">favorite_border</i></td>
+    <td><i id="fav_icon-{{$item->id}}" class="material-icons fav-icon pink-text text-lighten-3">favorite_border</i></td>
   </tr>
   @endforeach
 </table>
