@@ -19,6 +19,7 @@
     <th>mail</th>
     <th>age</th>
     <th>DELETE</th>
+    <th>FAV</th>
   </tr>
   @foreach ($items as $item)
   <tr>
@@ -33,6 +34,7 @@
         </button>
       </form>
     </td>
+    <td><i id="fav_icon-{{$item->id}}" class="material-icons fav-icon">favorite_border</i></td>
   </tr>
   @endforeach
 </table>
