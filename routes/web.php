@@ -25,7 +25,7 @@ Route::post('/people/update','HelloController@update');
 Route::get('/people/search','HelloController@search');
 Route::get('/people/delete/{id}','HelloController@delete');
 
-
+Route::get('/happy','HappyController@index');
 Route::resource('/rest','RestappController');
 
 /**
@@ -48,7 +48,7 @@ Route::post('/books/update', 'BooksController@update');
 Route::post('/books/delete', 'BooksController@delete');
 
 
-// Auth::routes();
+Auth::routes();
 
 // Route::get('/home', 'BooksController@index')->name('home');
 
