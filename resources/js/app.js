@@ -68,6 +68,4 @@ $(function(){
     // localStorageに保存
     window.localStorage.setItem('fav-ids',likeIds);
   })
-
-
 })
