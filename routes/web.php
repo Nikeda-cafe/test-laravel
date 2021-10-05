@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/people','HelloController@index');
 Route::get('/people/add','HelloController@add');
 Route::post('/people/insert','HelloController@insert');
-Route::get('/people/edit/{id}','HelloController@edit');
+Route::get('/people/edit/{id}','HelloController@edit')->where('id','[0-9]?');
 Route::post('/people/update','HelloController@update');
 Route::get('/people/search','HelloController@search');
 Route::get('/people/delete/{id}','HelloController@delete');
