@@ -15,8 +15,10 @@ class HelloController extends Controller
   {
     $items = Person::getPeople();
     // dd($items);
+    $a = $req->a;
+    $b = $req->b;
 
-    return view('people.people',array('items' => $items));
+    return view('people.people',array('items' => $items,'a' => $a,'b' => $b));
   }
 
   public function add()

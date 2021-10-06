@@ -1,6 +1,6 @@
 @extends('layouts.helloapp')
 @section('content')
-<h1 class="blue-text text-lighten-3">Show People</h1>
+<h1 class="blue-text text-lighten-3">{{$a}}{{$b}}</h1>
 {{-- 検索 --}}
 <form action="/public/people/search" method="get">
 <div class="row">
