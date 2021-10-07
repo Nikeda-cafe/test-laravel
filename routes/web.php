@@ -18,15 +18,16 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\AbstractMiddleware;
 #Route::get('/','HomeController@index');
 Route::middleware([AbstractMiddleware::class])->group(function(){
-  Route::get('/people','HelloController@index');
+  Route::namespace('People')->group(function(){
+    Route::get('/people','HelloController@index');
+    Route::get('/people/add','HelloController@add');
+    Route::post('/people/insert','HelloController@insert');
+    Route::get('/people/edit/{id}','HelloController@edit')->where('id','[0-9]?');
+    Route::post('/people/update','HelloController@update');
+    Route::get('/people/search','HelloController@search');
+    Route::get('/people/delete/{id}','HelloController@delete');
+  });
 });
-Route::get('/people/add','HelloController@add');
-Route::post('/people/insert','HelloController@insert');
-Route::get('/people/edit/{id}','HelloController@edit')->where('id','[0-9]?');
-Route::post('/people/update','HelloController@update');
-Route::get('/people/search','HelloController@search');
-Route::get('/people/delete/{id}','HelloController@delete');
-
 Route::get('/happy','HappyController@index');
 Route::resource('/rest','RestappController');
 

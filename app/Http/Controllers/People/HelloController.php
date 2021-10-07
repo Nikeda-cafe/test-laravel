@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\People;
 
 use Illuminate\Http\Request;
 use App\Models\Person;
 use Illuminate\Support\Facades\DB;
 use Validator;
 use Session;
+use App\Http\Controllers\Controller;
 
 class HelloController extends Controller
 {
