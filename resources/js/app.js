@@ -35,14 +35,23 @@
 
 $(function(){
   const myStorageFav = window.localStorage.getItem('fav-ids');
-  const myFavs = myStorageFav.split(',')
+  if(myStorageFav !== null){
+    var myFavs = myStorageFav.split(',')
+  }else{
+    var myFavs = [];
+  }
   const likeIds = [];
-  // console.log(myFavs);
-  myFavs.forEach(function(el){
-    // console.log($('#fav_icon-' +el )[0])
-    $('#fav_icon-' +el ).text('favorite');
-    likeIds.push(el)
-  })
+
+  if(myFavs.length > 1){
+    myFavs.forEach(function(el){
+      // console.log($('#fav_icon-' +el )[0])
+      $('#fav_icon-' +el ).text('favorite');
+      likeIds.push(el)
+    })
+  }else if(myFavs.length === 1){
+    $('#fav_icon-' + myFavs[0] ).text('favorite');
+    likeIds.push(myFavs[0])
+  }
 
   console.log(likeIds);
   $('.fav-icon').on('click',function(){
