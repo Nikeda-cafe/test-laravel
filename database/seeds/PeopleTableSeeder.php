@@ -164,6 +164,8 @@ class PeopleTableSeeder extends Seeder
         ];
 
         DB::table('people')->insert($param);DB::table('people')->insert($param);
+
+      for($i = 0; $i<100000; $i++ ){
         $param = [
           'name' => 'rrr',
           'mail' => 'rrr@rrr',
@@ -171,6 +173,7 @@ class PeopleTableSeeder extends Seeder
         ];
 
         DB::table('people')->insert($param);
+      }
     }
 }
 
