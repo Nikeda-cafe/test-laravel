@@ -1,5 +1,6 @@
 @extends('layouts.helloapp')
 @section('content')
+<div id="qrcode"></div>
 <h1 class="blue-text text-lighten-3">People</h1>
 {{-- 検索 --}}
 <form action="/public/people/search" method="get">
