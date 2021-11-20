@@ -1,0 +1,99 @@
+openapi: 3.0.3
+info:
+    title: Laravel
+    description: ''
+    version: 1.0.0
+servers:
+    -
+        url: 'http://localhost:8080/public'
+paths:
+    /api/v1/hello:
+        get:
+            summary: (GET)名前を呼んで挨拶を返してくれるAPI
+            description: ''
+            parameters:
+                -
+                    in: query
+                    name: name
+                    description: 呼んで欲しい名前
+                    example: alias
+                    required: false
+                    schema:
+                        type: string
+                        description: 呼んで欲しい名前
+                        example: alias
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: '200'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'Hello 名無しさん!!GETだよ!!'
+                                    status: 200
+                                properties:
+                                    message: { type: string, example: 'Hello 名無しさん!!GETだよ!!' }
+                                    status: { type: integer, example: 200 }
+            tags:
+                - hello
+            security: []
+        post:
+            summary: (POST)名前を呼んで挨拶を返してくれるAPI
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: '200'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'Hello 名無しさん!!POSTやで!!'
+                                    status: 200
+                                properties:
+                                    message: { type: string, example: 'Hello 名無しさん!!POSTやで!!' }
+                                    status: { type: integer, example: 200 }
+            tags:
+                - hello
+            requestBody:
+                required: false
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                name:
+                                    type: string
+                                    description: 呼んで欲しい名前
+                                    example: reprehenderit
+            security: []

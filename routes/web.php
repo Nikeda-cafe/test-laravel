@@ -30,6 +30,8 @@ Route::middleware([AbstractMiddleware::class])->group(function(){
 });
 Route::get('/happy','HappyController@index');
 Route::resource('/rest','RestappController');
+Route::get('/v1/hello','ApiController@get');
+Route::post('/v1/hello','ApiController@post');
 
 /**
 * 本の一覧表示(books.blade.php)

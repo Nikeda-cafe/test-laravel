@@ -1,0 +1,170 @@
+{
+    "variable": [
+        {
+            "id": "baseUrl",
+            "key": "baseUrl",
+            "type": "string",
+            "name": "string",
+            "value": "localhost"
+        }
+    ],
+    "info": {
+        "name": "Laravel",
+        "_postman_id": "9f4b67fb-48b1-48fe-a628-0b9b4512370a",
+        "description": "",
+        "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
+    },
+    "item": [
+        {
+            "name": "hello",
+            "description": "",
+            "item": [
+                {
+                    "name": "(GET)\u540d\u524d\u3092\u547c\u3093\u3067\u6328\u62f6\u3092\u8fd4\u3057\u3066\u304f\u308c\u308bAPI",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/hello",
+                            "query": [
+                                {
+                                    "key": "name",
+                                    "value": "alias",
+                                    "description": "\u547c\u3093\u3067\u6b32\u3057\u3044\u540d\u524d",
+                                    "disabled": false
+                                }
+                            ],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/v1\/hello?name=alias"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "name": "(GET)\u540d\u524d\u3092\u547c\u3093\u3067\u6328\u62f6\u3092\u8fd4\u3057\u3066\u304f\u308c\u308bAPI Response #1",
+                            "originalRequest": {
+                                "url": {
+                                    "protocol": "http",
+                                    "host": "{{baseUrl}}",
+                                    "path": "api\/v1\/hello",
+                                    "query": [
+                                        {
+                                            "key": "name",
+                                            "value": "alias",
+                                            "description": "\u547c\u3093\u3067\u6b32\u3057\u3044\u540d\u524d",
+                                            "disabled": false
+                                        }
+                                    ],
+                                    "raw": "http:\/\/{{baseUrl}}\/api\/v1\/hello?name=alias"
+                                },
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application\/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application\/json"
+                                    }
+                                ],
+                                "body": null,
+                                "description": "",
+                                "auth": {
+                                    "type": "noauth"
+                                }
+                            },
+                            "header": null,
+                            "cookie": [],
+                            "body": "{\n    \"message\": \"Hello \\u540d\\u7121\\u3057\\u3055\\u3093!!GET\\u3060\\u3088!!\",\n    \"status\": 200\n}"
+                        }
+                    ]
+                },
+                {
+                    "name": "(POST)\u540d\u524d\u3092\u547c\u3093\u3067\u6328\u62f6\u3092\u8fd4\u3057\u3066\u304f\u308c\u308bAPI",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/hello",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/v1\/hello"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"reprehenderit\"\n}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "name": "(POST)\u540d\u524d\u3092\u547c\u3093\u3067\u6328\u62f6\u3092\u8fd4\u3057\u3066\u304f\u308c\u308bAPI Response #1",
+                            "originalRequest": {
+                                "url": {
+                                    "protocol": "http",
+                                    "host": "{{baseUrl}}",
+                                    "path": "api\/v1\/hello",
+                                    "query": [],
+                                    "raw": "http:\/\/{{baseUrl}}\/api\/v1\/hello"
+                                },
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application\/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application\/json"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n    \"name\": \"reprehenderit\"\n}"
+                                },
+                                "description": "",
+                                "auth": {
+                                    "type": "noauth"
+                                }
+                            },
+                            "header": null,
+                            "cookie": [],
+                            "body": "{\n    \"message\": \"Hello \\u540d\\u7121\\u3057\\u3055\\u3093!!POST\\u3084\\u3067!!\",\n    \"status\": 200\n}"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "auth": {
+        "type": "noauth"
+    }
+}
