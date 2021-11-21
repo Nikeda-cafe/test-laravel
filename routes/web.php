@@ -32,6 +32,9 @@ Route::get('/happy','HappyController@index');
 Route::resource('/rest','RestappController');
 Route::get('/v1/hello','ApiController@get');
 Route::post('/v1/hello','ApiController@post');
+Route::get('/request','RequestController@index');
+Route::post('/request','RequestController@index');
+
 
 /**
 * 本の一覧表示(books.blade.php)
